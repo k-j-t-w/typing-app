@@ -1,6 +1,6 @@
 .donut-frame {
     width: 650px;
-    height: 550px;
+    height: 670px;
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -51,5 +51,5 @@
     display: 'none';
     color: rgb(190, 190, 190);
     font-family: 'Ubuntu Mono';
-    font-size: 24px;
+    font-size: 30px;
 }

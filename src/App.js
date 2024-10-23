@@ -1,19 +1,24 @@
 import SpeedType from './components/SpeedType';
 import TopNav from './components/TopNav';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
 import './App.css'
 import "./styles/global.css"
 import Donut from './components/Donut'
 
 function App() {
   return (
-    <div className="App">
-     <TopNav/>
-      <main className='main'>
-        <div className='card'>
-         <SpeedType/>  
-        </div>
-      </main>
-      <Donut/>
+    <div className='App'>
+      <Router >
+        <TopNav />
+        <Routes>
+          <Route exact path="/" element={<SpeedType />} />
+          <Route path="/donut" element={<Donut />} />
+        </Routes>
+      </Router>
     </div>
   );
 }

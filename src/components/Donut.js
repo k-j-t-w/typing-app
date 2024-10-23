@@ -10,7 +10,7 @@ class Donut extends React.Component {
              k;double sin()
          ,cos();main(){float A=
        0,B=0,i,j,z[1760];char b[
-     1760];printf("\x1b[2J");for(;;
+    1760];printf("/x1b[2J");for(;;
   ){memset(b,32,1760);memset(z,0,7040)
   ;for(j=0;6.28>j;j+=0.07)for(i=0;6.28
  >i;i+=0.02){float c=sin(i),d=cos(j),e=
@@ -22,7 +22,7 @@ in(B),t=c*h*g-f*        e;int x=40+30*D*
  )*m-c*d*e-f*g-l        *d*n);if(22>y&&
  y>0&&x>0&&80>x&&D>z[o]){z[o]=D;;;b[o]=
  ".,-~:;=!*#$@"[N>0?N:0];}}/*#****!!-*/
-  printf("\x1b[H");for(k=0;1761>k;k++)
+  printf("/x1b[H");for(k=0;1761>k;k++)
    putchar(k%80?b[k]:10);A+=0.04;B+=
      0.02;}}/*****####*******!!=;:~
        ~::==!!!**********!!!==::-
@@ -40,7 +40,7 @@ in(B),t=c*h*g-f*        e;int x=40+30*D*
         if(togglebtn.style.display !== "none"){
             togglebtn.style.display = "none";
             pretag.style.display = 'block';
-            pretag.style.fontSize = '24px';
+            pretag.style.fontSize = '30px';
             pretag.style.color = 'rgb(190, 190, 190)';
         }
         spin();
