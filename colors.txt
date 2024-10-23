@@ -1,3 +1,9 @@
 white (155,155,155)
 grey (102,102,102)
 green (68,129,84)
+
+TODO
+user login logout features
+stats
+user can change time control for type test
+user unlocks letters in practice mode

@@ -1,0 +1,55 @@
+.donut-frame {
+    width: 650px;
+    height: 550px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.donut-frame pre{
+    color: black;
+    position: absolute;
+    z-index: 0;
+}
+
+
+#toggle-btn {
+    z-index: 1;
+    display: inline-block;
+    padding: 0.2em;
+    border: 0.16em solid rgb(190, 190, 190);
+    margin: 0 0.3em;
+    box-sizing: border-box;
+    /* text-transform: uppercase; */
+    font-family: 'Ubuntu Mono';
+    font-weight: 400;
+    font-size: 2em;
+    color: rgb(190, 190, 190);
+    background-color: transparent;
+    text-align: center;
+    transition: all 0s;
+    border-radius: 5px;
+}
+#toggle-btn:hover{
+    color: grey;
+    border-color: grey;
+}
+#toggle-btn:active{
+    color: rgb(190, 190, 190);
+    border-color: rgb(190, 190, 190);
+}
+@media all and (max-width:30em){
+    toggle-btn{
+        display: block;
+        margin: 20px;
+    }
+}
+
+
+#ascii {
+    display: 'none';
+    color: rgb(190, 190, 190);
+    font-family: 'Ubuntu Mono';
+    font-size: 24px;
+}

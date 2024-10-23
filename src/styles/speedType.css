@@ -1,0 +1,18 @@
+.wordList {
+    display: flex;
+    font-family: 'Ubuntu Mono';
+    font-size: 25px;
+    line-height: 150%;
+    margin-inline: 20px;
+    flex-wrap: wrap;
+}
+
+.wordList span {
+    display: flex;
+}
+
+.countDown {
+    font-family: 'Ubunto Mono';
+    font-size: 30px;
+    margin-bottom: 20px;
+}

@@ -12,7 +12,7 @@
   ,v=12+15*B*(f*A        *c+d*n)|0,I=m+80
   *v,h=8*((a*e-l*r*o)*n-l*r*e-a*o-f*r*c)|
    0;v<22&&v>=0&&m>=0&&m<79&&B>t[I]&&(t[
-    I]=B,s[I]=".,-~:;=!*#$@"[h>0?h:0])}}
+    I]=B,s[I]=".,-~:;+cr#$@"[h>0?h:0])}}
     process.stdout.write(`\x1b[J\x1b[H`
      +s.join(""))},i=setInterval(a,50
         );/*=!!!**********!!!==:*/
