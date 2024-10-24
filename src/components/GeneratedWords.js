@@ -1,16 +1,18 @@
 import React from "react";
+import UserTypings from './UserTypings.js';
 
 function GeneratedWords({ words, countDown }) {
+
+    const wordsString = words.join(' ')
+    console.log(wordsString)
     return (
         <div className='card'>
                 <div className='countDown'>{countDown}</div>
-                <div className='wordList' >
-                    {words.map((word, i) => (
-                        <React.Fragment key={i}>
-                            <span>{word}</span>
-                            <span>·</span>
-                        </React.Fragment>
-                    ))}
+                <div className='overlay-words'>
+                    <div className='wordList' >
+                        {wordsString}
+                    </div>
+                    <UserTypings userInput={wordsString}/>
                 </div>
             </div>
     )

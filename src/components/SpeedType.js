@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react'
 import { generate, count } from "random-words";
 import '../styles/speedType.css'
 import Results from './Results.js';
-import UserTypings from './UserTypings.js';
 import GeneratedWords from './GeneratedWords.js';
 
 const NUMBER_OF_WORDS = 50;
@@ -48,7 +47,7 @@ function SpeedType() {
 
     return (
         <div className='main'>
-            <GeneratedWords words={words} countDown={countDown}/>
+                <GeneratedWords words={words} countDown={countDown}/>
             <Results/>
         </div>
     );
