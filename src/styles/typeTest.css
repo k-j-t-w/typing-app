@@ -1,0 +1,28 @@
+.type-test {
+    margin-top: 100px;
+}
+
+.type-test-words {
+    position: relative;
+    display: flex;
+    font-family: 'Ubuntu mono';
+    font-size: 26px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    letter-spacing: 1px;
+    line-height: 150%;
+}
+
+.generated-words {
+   
+    color:rgb(112, 112, 112)
+}
+
+.user-char {
+    color: rgb(190, 190, 190);
+}
+
+.user-typings {
+    position: absolute;
+}
+

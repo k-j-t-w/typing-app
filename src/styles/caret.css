@@ -1,0 +1,12 @@
+.caret {
+    display: inline-block; 
+    height: 28px;
+    width: 2px;
+    background-color: rgb(190, 190, 190);
+    animation: blink 0.8s steps(1) infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}

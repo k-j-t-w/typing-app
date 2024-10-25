@@ -1,4 +1,4 @@
-import SpeedType from './components/SpeedType';
+import TypeTest from './components/TypeTest';
 import TopNav from './components/TopNav';
 import {
   BrowserRouter as Router,
@@ -15,7 +15,7 @@ function App() {
       <Router >
         <TopNav />
         <Routes>
-          <Route exact path="/" element={<SpeedType />} />
+          <Route exact path="/" element={<TypeTest />} />
           <Route path="/donut" element={<Donut />} />
         </Routes>
       </Router>
