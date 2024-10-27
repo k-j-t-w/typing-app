@@ -1,12 +1,17 @@
 import '../styles/results.css';
 
-function Results() {
+function Results({ state, errors, accuracyPercentage, total}) {
+
+    if (state !== 'finish') {
+        return null;
+    }
+    console.log('errors', errors, 'accuracyPercentage', accuracyPercentage)
     return (
         <div className="results">
             <span>Results</span>
             <span>Speed: wpm</span>
-            <span>Accuracy: %</span>
-            <span>Score: !</span>
+            <span>Accuracy: {accuracyPercentage}</span>
+            <span>Errors: {errors}</span>
         </div>
     );
 }
