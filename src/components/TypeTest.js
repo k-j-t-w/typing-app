@@ -14,7 +14,7 @@ function TypeTest() {
             <div className='countdown'>{timeLeft}</div>
             <div className='type-test-words'>
                 <GeneratedWords words={wordsString}/>
-                <UserTypings userInput={typed} />
+                <UserTypings userInput={typed} words={wordsString}/>
             </div>
         </div>
     );

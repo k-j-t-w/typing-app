@@ -18,8 +18,16 @@
     color:rgb(112, 112, 112)
 }
 
-.user-char {
+.user-char-correct {
     color: rgb(190, 190, 190);
+}
+
+.user-char-incorrect {
+    color: rgb(201, 95, 95);
+}
+
+.user-char-incorrect-whitespace {
+    background-color: rgba(209, 87, 87, 0.281);
 }
 
 .user-typings {
