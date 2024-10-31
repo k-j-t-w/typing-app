@@ -10,11 +10,12 @@ import "./styles/global.css"
 import Donut from './components/Donut'
 import Signup from './components/Signup';
 import Login from './components/Login';
-import AuthProvider from './hooks/AuthProvider';
+import AuthProvider, { useAuth } from './hooks/AuthProvider';
 import PrivateRoute from './hooks/PrivateRoute';
 import Practice from './components/Practice';
 
 function App() {
+
   return (
     <div className='App'>
       <Router >

@@ -22,15 +22,20 @@ function TopNav() {
                     <div className='topnav-option'>
                         <Link to='/donut' className="custom-link">Donut</Link>
                     </div>
-                    <div className='topnav-option'>
-                        <Link to='/login' className="custom-link">Login</Link>
-                    </div>
-                    <div className='topnav-option'>
-                        <Link to='/signup' className="custom-link">Sign Up</Link>
-                    </div>
-                    <button className='topnav-option' onClick={() => auth.logOut()} >
-                        Logout
-                    </button>
+                    {!auth.user ? (
+                        <>
+                            <div className='topnav-option'>
+                                <Link to='/login' className="custom-link">Login</Link>
+                            </div>
+                            <div className='topnav-option'>
+                                <Link to='/signup' className="custom-link">Sign Up</Link>
+                            </div>
+                        </>
+                    ) : (
+                        <button className='topnav-option' onClick={auth.logOut}>
+                            Logout
+                        </button>
+                    )}
                 </div>
             </div>
         </div>
