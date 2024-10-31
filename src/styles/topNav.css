@@ -23,12 +23,14 @@
 }
 
 .topnav-options {
+
     display: flex;
     padding-inline: 20px;
 
 }
 
 .topnav-option {
+    all: unset;
     margin-left: 20px;
     cursor: pointer;
 }

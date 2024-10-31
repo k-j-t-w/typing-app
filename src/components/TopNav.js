@@ -1,7 +1,9 @@
 import '../styles/topNav.css'
 import { Link } from 'react-router-dom';
+import { useAuth } from "../hooks/AuthProvider";
 
 function TopNav() {
+    const auth = useAuth();
     return (
         <div className='topnav-cont'>
             <div className='topnav'>
@@ -9,7 +11,9 @@ function TopNav() {
                     <div><Link to='/' className="custom-link">KeyKraze</Link></div>
                 </div>
                 <div className='topnav-options'>
-                    <div className='topnav-option'>Practice</div>
+                    <div className='topnav-option'>
+                        <Link to='/practice' className="custom-link">Practice</Link>
+                    </div>
                     <div className='topnav-option'>
                         <Link to='/' className="custom-link">Typing Test</Link>
                     </div>
@@ -24,7 +28,9 @@ function TopNav() {
                     <div className='topnav-option'>
                         <Link to='/signup' className="custom-link">Sign Up</Link>
                     </div>
-                    <div className='topnav-option'>Logout</div>
+                    <button className='topnav-option' onClick={() => auth.logOut()} >
+                        Logout
+                    </button>
                 </div>
             </div>
         </div>

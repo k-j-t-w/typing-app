@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useAuth } from "../hooks/AuthProvider.js";
 import '../styles/login.css';
 
 const Login = () => {
@@ -7,10 +8,13 @@ const Login = () => {
         password: "",
     });
 
+    const auth =useAuth();
+
     const handleSubmitEvent = (e) => {
         e.preventDefault();
         if (input.username !== "" && input.password !== "") {
-        //dispatch action from hooks
+            auth.loginAction(input)
+            return
         }
         alert("please provide a valid input");
     };
@@ -24,7 +28,7 @@ const Login = () => {
     };
 
     return (
-        <form className="login-form">
+        <form className="login-form" onSubmit={handleSubmitEvent}>
             <span className='welcome'>Welcome Back!</span>
             <label className='label'>
                 <input type="text" placeholder='Email' onChange={handleInput}/>
