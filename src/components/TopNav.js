@@ -18,7 +18,12 @@ function TopNav() {
                     <div className='topnav-option'>
                         <Link to='/donut' className="custom-link">Donut</Link>
                     </div>
-                    <div className='topnav-option'>Login</div>
+                    <div className='topnav-option'>
+                        <Link to='/login' className="custom-link">Login</Link>
+                    </div>
+                    <div className='topnav-option'>
+                        <Link to='/signup' className="custom-link">Sign Up</Link>
+                    </div>
                     <div className='topnav-option'>Logout</div>
                 </div>
             </div>
