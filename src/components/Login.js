@@ -12,6 +12,7 @@ const Login = () => {
 
     const handleSubmitEvent = (e) => {
         e.preventDefault();
+        console.log('username: ', input.username, 'password: ', input.password)
         if (input.username !== "" && input.password !== "") {
             auth.loginAction(input)
             return
@@ -31,10 +32,10 @@ const Login = () => {
         <form className="login-form" onSubmit={handleSubmitEvent}>
             <span className='welcome'>Welcome Back!</span>
             <label className='label'>
-                <input type="text" placeholder='Email' onChange={handleInput}/>
+                <input type="text" placeholder='Email' name='username' onChange={handleInput}/>
             </label>
             <label className='label'>
-                <input type="password" placeholder='Password' onChange={handleInput}/>
+                <input type="password" name='password' placeholder='Password' onChange={handleInput}/>
             </label>
             <div>
                 <button type="submit">Login</button>
