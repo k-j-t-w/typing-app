@@ -17,7 +17,7 @@ const expectedChars = expected.split('');
 export const calculateAccuracyPercentage = (errors, total) => {
     if (total > 0) {
         const corrects = total - errors;
-        return (corrects / total) * 100;
+        return (Math.floor((corrects / total) * 1000)) / 10;
     }
 
     return 0;
