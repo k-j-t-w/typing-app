@@ -1,58 +1,57 @@
-import { useContext, createContext, useState } from "react";
+import { useContext, createContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+const bcrypt = require('bcryptjs');
+
 
 const AuthContext = createContext();
 
-const users ={
-  kai: {
-    password: '123',
-    scores: [45, 37.6, 60]
-  }
-}
-
 const AuthProvider = ({ children }) => {
+  const [ users, setUsers ] = useState([
+    { 
+      username: 'kai',
+      password: bcrypt.hashSync('123', 10),
+      scores: [45, 37.6, 60]
+    }
+  ])
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(localStorage.getItem("site") || "");
+  const [newUser, setNewUser] = useState(null);
   const navigate = useNavigate();
-  
-  const loginAction = async (data) => {
-    let valid = false;
-    for ( let key in users) {
 
-      if (key === data.username) {
-        if (users[key].password === data.password) {
-          console.log('logged in as ', key)
-          valid = true
-          setUser(key)
-          navigate("/");
-        }
+  const loginAction = async (data) => {
+    for ( let u in users) {
+
+      if (users[u].username === data.username && bcrypt.compare(data.password, users[u].password)) {
+        console.log('logged in as ', users[u].username)
+        setUser(users[u].username)
+        navigate("/");
       }
     }
-
     return false;
-
-
-    // try {
-    //   const response = await fetch("your-api-endpoint/auth/login", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(data),
-    //   });
-    //   const res = await response.json();
-    //   if (res.data) {
-    //     setUser(res.data.user);
-    //     setToken(res.token);
-    //     localStorage.setItem("site", res.token);
-    //     navigate("/dashboard");
-    //     return;
-    //   }
-    //   throw new Error(res.message);
-    // } catch (err) {
-    //   console.error(err);
-    // }
   };
+
+  const signupAction = async (data) => {
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(data.password, salt);
+
+    const user = {
+      username: data.username,
+      password: hashedPassword,
+      scores: [],
+    };
+  
+    console.log('Hashed Password on Signup:', hashedPassword)
+    setNewUser(user);
+    setUsers((prev) => [...prev, user]);
+  };
+  
+  useEffect(() => {
+    if (newUser) {
+      loginAction(newUser);
+      setNewUser(null); 
+      console.log(users);
+    }
+  }, [users]);
 
   const logOut = () => {
     setUser(null);
@@ -61,7 +60,7 @@ const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ token, user, loginAction, logOut }}>
+    <AuthContext.Provider value={{ token, user, loginAction, logOut, signupAction }}>
       {children}
     </AuthContext.Provider>
   );
