@@ -13,6 +13,7 @@ import Login from './components/Login';
 import AuthProvider, { useAuth } from './hooks/AuthProvider';
 import PrivateRoute from './hooks/PrivateRoute';
 import Practice from './components/Practice';
+import Leaderboard from './components/Leaderboard';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
               <Route exact path="/practice" element={<Practice />} />
             </Route>
             <Route exact path="/" element={<TypeTest />} />
+            <Route path="/leaderboard" element={<Leaderboard />} />
             <Route path="/donut" element={<Donut />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />

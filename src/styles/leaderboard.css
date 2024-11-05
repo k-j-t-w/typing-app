@@ -1,0 +1,98 @@
+.leaderboard-cont {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    align-items: center;
+    width: 80%;
+    margin-inline: 30px;
+}
+
+.leaderboard-cont h1 {
+    font-size: 60px;
+}
+
+.scores {
+    display: flex;
+    width: 100%;
+    margin-block: 10px;
+    height: 60px;
+    background-color: rgb(37, 37, 37);
+    border-radius: 5px;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 30px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.scores.first {
+    height: 90px;
+    padding-inline: 60px;
+}
+
+.scores.second {
+    height: 80px;
+    padding-inline: 50px;
+}
+
+.scores.third {
+    height: 70px;
+    padding-inline: 40px;
+}
+
+.first .leaderboard-ranking {
+    color: rgb(255,191,0);
+    font-size: 40px;
+    font-weight: 900;
+    transform: translateX(-30px);
+}
+
+.second .leaderboard-ranking {
+    color: rgb(224,224,224);
+    font-size: 35px;
+    font-weight: 800;
+    transform: translateX(-20px);
+}
+
+.third .leaderboard-ranking {
+    color: #CD7F32;
+    font-size: 30px;
+    font-weight: 700;
+    transform: translateX(-10px);
+}
+
+.leaderboard-username {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.leaderboard-score {
+    display: flex;   
+    align-items: flex-end;
+    font-weight: 700;
+}
+
+.first .leaderboard-score {
+    transform: translateX(30px);
+}
+
+.second .leaderboard-score {
+    transform: translateX(20px);
+}
+
+.third .leaderboard-score {
+    transform: translateX(10px);
+}
+
+.leaderboard-wpm {
+    font-size: 20px;
+    color: rgba(114, 114, 114, 0.432);
+}
+
+.fa-crown {
+    position: absolute;
+    transform: translateX(-90px)  translateY(-50px) rotate(-0.1turn);
+    font-size: 50px;
+    color: rgb(255,191,0);
+}

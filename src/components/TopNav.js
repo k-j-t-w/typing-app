@@ -17,8 +17,10 @@ function TopNav() {
                     <div className='topnav-option'>
                         <Link to='/' className="custom-link">Typing Test</Link>
                     </div>
-                    <div className='topnav-option'>Statistics</div>
-                    <div className='topnav-option'>High Scores</div>
+                    <div className='topnav-option'>My Stats</div>
+                    <div className='topnav-option'>
+                        <Link to='/leaderboard' className="custom-link">Leaderboard</Link>
+                    </div>
                     <div className='topnav-option'>
                         <Link to='/donut' className="custom-link">Donut</Link>
                     </div>
