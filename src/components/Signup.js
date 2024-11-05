@@ -13,12 +13,14 @@ const Signup = () => {
     const handleSubmitEvent = (e) => {
         e.preventDefault();
         console.log(input)
-        if (input.username !== "" && input.password !== "") {
-            if(input.password === input.confirmPassword) {
-                auth.signupAction(input)
-                return
+        if (input.username.length < 30) {
+            if (input.username !== "" && input.password !== "") {
+                if(input.password === input.confirmPassword) {
+                    auth.signupAction(input)
+                    return
+                }
+                alert('passwords do not match')
             }
-            alert('passwords do not match')
         }
         alert("please provide a valid input");
     };

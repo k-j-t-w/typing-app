@@ -11,13 +11,13 @@ function TopNav() {
                     <div><Link to='/' className="custom-link">KeyKraze</Link></div>
                 </div>
                 <div className='topnav-options'>
-                    <div className='topnav-option'>
+                    {/* <div className='topnav-option'>
                         <Link to='/practice' className="custom-link">Practice</Link>
-                    </div>
+                    </div> */}
                     <div className='topnav-option'>
                         <Link to='/' className="custom-link">Typing Test</Link>
                     </div>
-                    <div className='topnav-option'>My Stats</div>
+                    {/* <div className='topnav-option'>My Stats</div> */}
                     <div className='topnav-option'>
                         <Link to='/leaderboard' className="custom-link">Leaderboard</Link>
                     </div>

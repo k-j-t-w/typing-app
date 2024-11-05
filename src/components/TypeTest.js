@@ -17,7 +17,7 @@ function TypeTest() {
                 <GeneratedWords words={wordsString}/>
                 <UserTypings userInput={typed} words={wordsString}/>
             </div>
-            <Results state={typingTestState} errors={errors} accuracyPercentage={calculateAccuracyPercentage(errors, totalTyped)} total={totalTyped} time={SECONDS}/>
+            <Results state={typingTestState} errors={errors} accuracyPercentage={calculateAccuracyPercentage(errors, totalTyped)} total={totalTyped} time={SECONDS} restart={restart}/>
         </div>
     );
 }

@@ -6,13 +6,7 @@ const bcrypt = require('bcryptjs');
 const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
-  const [ users, setUsers ] = useState([
-    { 
-      username: 'kai',
-      password: bcrypt.hashSync('123', 10),
-      scores: [45, 37.6, 60]
-    }
-  ])
+  const [ users, setUsers ] = useState([]);
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(localStorage.getItem("site") || "");
   const [newUser, setNewUser] = useState(null);
@@ -50,7 +44,6 @@ const AuthProvider = ({ children }) => {
       scores: [],
     };
   
-    console.log('Hashed Password on Signup:', hashedPassword)
     setNewUser(user);
     setUsers((prev) => [...prev, user]);
   };

@@ -40,3 +40,15 @@
 .results-small {
     color: rgba(112, 112, 112, 0.5);
 }
+
+.restart {
+    margin-top: 30px;
+    font-weight: 700;
+    font-size: 30px;
+    cursor: pointer;
+    color: rgb(255,191,0);
+}
+
+.restart:hover{
+    color: rgba(255, 191, 0, 0.692);
+}

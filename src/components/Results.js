@@ -2,7 +2,7 @@ import '../styles/results.css';
 import { useAuth } from "../hooks/AuthProvider.js";
 import { useEffect, useState } from "react";
 
-function Results({ state, errors, accuracyPercentage, total, time}) {
+function Results({ state, errors, accuracyPercentage, total, time, restart}) {
     const { user, updateUserScores } = useAuth();
     const [previousWpm, setPreviousWpm] = useState(null);
 
@@ -19,6 +19,9 @@ function Results({ state, errors, accuracyPercentage, total, time}) {
         return null;
     }
 
+    const handleClick = () => {
+        restart()
+    }
     return (
         <div className="results">
             <div className='results-cont'>
@@ -38,6 +41,7 @@ function Results({ state, errors, accuracyPercentage, total, time}) {
                     <div className='results-small'>Accuracy</div>
                 </div>
             </div>
+            <div className='restart' onClick={handleClick}><i class="fa-solid fa-arrow-rotate-right"></i></div>
         </div>
     );
 }

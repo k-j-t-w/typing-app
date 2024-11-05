@@ -5,7 +5,7 @@ import useTypings from './useTypings.js';
 import { countErrors } from '../util/helpers.js';
 
 const NUMBER_OF_WORDS = 50;
-const SECONDS = 5;
+const SECONDS = 30;
 
 const useEngine = () => {
     const [typingTestState, setTypingTestState] = useState('start')
