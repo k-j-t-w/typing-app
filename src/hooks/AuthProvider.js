@@ -18,6 +18,16 @@ const AuthProvider = ({ children }) => {
   const [newUser, setNewUser] = useState(null);
   const navigate = useNavigate();
 
+  const updateUserScores = (username, newScore) => {
+    setUsers((prevUsers) => 
+      prevUsers.map(user => 
+        user.username === username 
+          ? { ...user, scores: [...user.scores, newScore] } 
+          : user
+      )
+    );
+  };
+
   const loginAction = async (data) => {
     for ( let u in users) {
 
@@ -60,7 +70,7 @@ const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ token, user, users, loginAction, logOut, signupAction }}>
+    <AuthContext.Provider value={{ token, user, users, loginAction, logOut, signupAction, updateUserScores }}>
       {children}
     </AuthContext.Provider>
   );

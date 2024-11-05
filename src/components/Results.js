@@ -1,13 +1,24 @@
 import '../styles/results.css';
+import { useAuth } from "../hooks/AuthProvider.js";
+import { useEffect, useState } from "react";
 
 function Results({ state, errors, accuracyPercentage, total, time}) {
+    const { user, updateUserScores } = useAuth();
+    const [previousWpm, setPreviousWpm] = useState(null);
+
+    const wpm = Math.floor((((total - errors) / 5) / (time / 60)) * 10) / 10;
+
+    useEffect(() => {
+        if (state === 'finish' && user && wpm !== previousWpm) {
+            updateUserScores(user, wpm); 
+            setPreviousWpm(wpm); 
+        }
+    }, [state, user, wpm, previousWpm, updateUserScores]);
 
     if (state !== 'finish') {
         return null;
     }
-    console.log('errors', errors, 'accuracyPercentage', accuracyPercentage)
 
-    const wpm = Math.floor((((total - errors) / 5) / (time / 60)) * 10) / 10;
     return (
         <div className="results">
             <div className='results-cont'>

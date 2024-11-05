@@ -5,7 +5,7 @@ const useCountdownTimer = (seconds) => {
     const intervalRef = useRef(null);
 
     const startCountdown = useCallback(() => {
-        console.log('starting countdown...')
+
 
         intervalRef.current = setInterval(() => {
             setTimeLeft((timeLeft) => timeLeft - 1) 
@@ -13,7 +13,7 @@ const useCountdownTimer = (seconds) => {
     }, [setTimeLeft]);
 
     const resetCountdown = useCallback(() => {
-        console.log('resetting countdown...')
+
 
         if (intervalRef.current) {
             clearInterval(intervalRef.current);
@@ -24,7 +24,7 @@ const useCountdownTimer = (seconds) => {
 
     useEffect (() => {
         if (!timeLeft &&intervalRef.current) {
-            console.log('clearing timer...');
+
 
             clearInterval(intervalRef.current);
         }

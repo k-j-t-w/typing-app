@@ -5,7 +5,7 @@ import useTypings from './useTypings.js';
 import { countErrors } from '../util/helpers.js';
 
 const NUMBER_OF_WORDS = 50;
-const SECONDS = 30;
+const SECONDS = 5;
 
 const useEngine = () => {
     const [typingTestState, setTypingTestState] = useState('start')
@@ -36,7 +36,6 @@ const useEngine = () => {
     //when timer is finished end game
     useEffect(() => {
         if(!timeLeft) {
-            console.log('time is up...');
             setTypingTestState('finish');
             sumErrors();
         }
@@ -45,7 +44,6 @@ const useEngine = () => {
 
     useEffect(() => {
         if (areWordsFinished) {
-            console.log('words are finished...');
             sumErrors();
             updateWords();
             clearTyped();
@@ -54,7 +52,6 @@ const useEngine = () => {
     }, [cursor, words, clearTyped, typed, areWordsFinished, updateWords, sumErrors])
 
     const restart = useCallback(() => {
-        console.log('restarting...');
         resetCountdown();
         resetTotalTyped();
         setTypingTestState('start');
